@@ -401,6 +401,11 @@ public class MekanismRecipeProvider extends BaseRecipeProvider {
               ItemStackIngredient.from(ItemTags.WOOL),
               new ItemStack(Items.STRING, 4)
         ).build(consumer, Mekanism.rl(basePath + "wool_to_string"));
+        //Rotten Flesh -> Biofuel
+        ItemStackToItemStackRecipeBuilder.crushing(
+                ItemStackIngredient.from(Items.ROTTEN_FLESH),
+                MekanismItems.BIO_FUEL.getItemStack(1)
+        ).build(consumer, Mekanism.rl(basePath + "biofuel/" + "rotten_flesh"));
     }
 
     private void addCrusherBioFuelRecipes(Consumer<IFinishedRecipe> consumer, String basePath) {
